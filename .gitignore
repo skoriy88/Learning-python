@@ -1,0 +1,7 @@
+# ignore folders 
+LP/
+__pycache__
+
+# ignore txt-files
+PP/*.txt
+PP/*.jpg
