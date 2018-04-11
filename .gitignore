@@ -5,3 +5,6 @@ __pycache__
 # ignore txt-files
 PP/*.txt
 PP/*.jpg
+PP/System/Filetools/666.txt
+PP/System/Filetools/666.txt.out
+PP/System/Media/123.jpg
