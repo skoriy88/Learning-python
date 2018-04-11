@@ -1,5 +1,5 @@
 """
-Opens socket TCP/IP on the server's side
+Server program - Opens socket TCP/IP on the server's side
 """
 from socket import *
 myHost = ''

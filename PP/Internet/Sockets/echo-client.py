@@ -1,5 +1,5 @@
 """
-Uses sockets for sending data to server and receiving it's answers
+Client program - Uses sockets for sending data to server and receiving it's answers
 """
 import sys, pickle
 from socket import *
