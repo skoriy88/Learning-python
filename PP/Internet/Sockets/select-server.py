@@ -10,6 +10,7 @@
 import sys, time
 from select import select
 from socket import socket, AF_INET, SOCK_STREAM
+
 def now(): return time.ctime(time.time())
 myHost = ''             # компьютер­сервер, '' означает локальный хост
 myPort = 50007          # использовать незарезервированный номер порта
