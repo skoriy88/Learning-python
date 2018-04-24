@@ -1,0 +1,38 @@
+"""
+запускает функцию client из модуля getfile и реализует графический
+интерфейс на основе многократно используемого класса формы;
+с помощью os.chdir выполняет переход в требуемый локальный каталог,
+если указан (getfile сохраняет файл в cwd);
+что сделать: использовать потоки выполнения, вывести индикатор
+хода выполнения операции и отобразить вывод getfile;
+"""
+
+from form import Form
+from tkinter import Tk, mainloop
+from tkinter.messagebox import showinfo
+import getfile, os
+
+class GetfileForm(Form):
+    def __init__(self, oneshot=False):
+        root = Tk()
+        root.title('getfilegui')
+        labels = ['Server Name', 'Port Number', 'File Name', 'Local Dir?']
+        Form.__init__(self, labels, root)
+        self.oneshot = oneshot
+
+    def onSubmit(self):
+        Form.onSubmit(self)
+        localdir = self.content['Local Dir?'].get()
+        portnumber = self.content['Port Number'].get()
+        servername = self.content['Server Name'].get()
+        filename = self.content['File Name'].get()
+        if localdir:
+            os.chdir(localdir)
+        portnumber = int(portnumber)
+        getfile.client(servername, portnumber, filename)
+        showinfo('getfilegui', 'Download complete')
+        if self.oneshot: Tk().quit()
+
+if __name__ == '__main__':
+    GetfileForm()
+    mainloop()
