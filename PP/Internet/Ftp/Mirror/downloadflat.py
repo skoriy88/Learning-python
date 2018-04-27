@@ -31,8 +31,9 @@ localdir = (len(sys.argv) > 1 and sys.argv[1]) or '.'
 cleanall = input('Clean local directory first? ')[:1] in ['y', 'Y']
 
 '''
+nonpassive = False
 remotesite = input("Enter ftp-address: ")
-remotedir = '.'
+remotedir = input("Enter ftp-dir: ")
 remoteuser = input('Enter username: ')
 remotepass = getpass('Password for %s on %s: ' % (remoteuser, remotesite))
 localdir = (len(sys.argv) > 1 and sys.argv[1]) or '.'
